@@ -9,3 +9,19 @@
 #news-list {
     padding: 20px;
 }
+
+.textArea #noteInput {
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 100%;
+    height: 150px;
+}
+
+.textArea #noteButton {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(250, 176, 4);
+    padding: 8px 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
