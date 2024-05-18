@@ -44,6 +44,13 @@
 	<script src="./assets/js/weather.js"></script>
 	<script src="./assets/js/photo-gallery.js"></script>
 	<script src="./assets/js/add-note.js"></script>
+	<script src="./assets/js/calc.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+		integrity="sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"
+		integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!-- /my js  -->
 
 </head>
@@ -331,9 +338,11 @@
 						</div>
 						<!-- /add note  -->
 
+
+						<!-- calculator  -->
 						<div class="card">
 							<div class="card-header bg-teal-400 header-elements-inline">
-								<h6 class="card-title">Widget 8</h6>
+								<h6 class="card-title">Calculator</h6>
 								<div class="header-elements">
 									<div class="list-icons">
 										<a class="list-icons-item" data-action="collapse"></a>
@@ -345,44 +354,62 @@
 							</div>
 
 							<div class="table-responsive">
-								<table class="table">
-									<thead>
-										<tr>
-											<th>#</th>
-											<th>First Name</th>
-											<th>Last Name</th>
-											<th>Username</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td rowspan="2">1</td>
-											<td>Mark</td>
-											<td>Otto</td>
-											<td>@mdo</td>
-										</tr>
-										<tr>
-											<td>Mark</td>
-											<td>Otto</td>
-											<td>@TwBootstrap</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>Jacob</td>
-											<td>Thornton</td>
-											<td>@fat</td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td colspan="2">Larry the Bird</td>
-											<td>@twitter</td>
-										</tr>
-									</tbody>
+								<table id="calcu">
+									<tr>
+										<td colspan="3"><input type="text" id="result"></td>
+										<td><input type="button" value="c" onclick="clr()"
+												style="background-color: red;" /> </td>
+									</tr>
+									<tr>
+										<td><input type="button" value="1" onclick="dis('1')"
+												onkeydown="myFunction(event)"> </td>
+										<td><input type="button" value="2" onclick="dis('2')"
+												onkeydown="myFunction(event)"> </td>
+										<td><input type="button" value="3" onclick="dis('3')"
+												onkeydown="myFunction(event)"> </td>
+										<td><input type="button" value="/" onclick="dis('/')"
+												onkeydown="myFunction(event)" style="background-color: yellow;"> </td>
+									</tr>
+									<tr>
+										<td><input type="button" value="4" onclick="dis('4')"
+												onkeydown="myFunction(event)"> </td>
+										<td><input type="button" value="5" onclick="dis('5')"
+												onkeydown="myFunction(event)"> </td>
+										<td><input type="button" value="6" onclick="dis('6')"
+												onkeydown="myFunction(event)"> </td>
+										<td><input type="button" value="*" onclick="dis('*')"
+												onkeydown="myFunction(event)" style="background-color: yellow;"> </td>
+									</tr>
+									<tr>
+										<td><input type="button" value="7" onclick="dis('7')"
+												onkeydown="myFunction(event)"> </td>
+										<td><input type="button" value="8" onclick="dis('8')"
+												onkeydown="myFunction(event)"> </td>
+										<td><input type="button" value="9" onclick="dis('9')"
+												onkeydown="myFunction(event)"> </td>
+										<td><input type="button" value="-" onclick="dis('-')"
+												onkeydown="myFunction(event)" style="background-color: yellow;"> </td>
+									</tr>
+									<tr>
+										<td><input type="button" value="0" onclick="dis('0')"
+												onkeydown="myFunction(event)"> </td>
+										<td><input type="button" value="." onclick="dis('.')"
+												onkeydown="myFunction(event)"> </td>
+
+										<!-- solve function call function solve to evaluate value -->
+										<td><input type="button" value="=" onclick="solve()"
+												style="background-color: rgb(0, 162, 255);"> </td>
+
+										<td><input type="button" value="+" onclick="dis('+')"
+												onkeydown="myFunction(event)" style="background-color: yellow;"> </td>
+									</tr>
 								</table>
 							</div>
 						</div>
 					</div>
 				</div>
+				<!-- calculator  -->
+
 				<!-- /full card sorting -->
 
 			</div>
